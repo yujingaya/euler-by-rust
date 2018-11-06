@@ -1,6 +1,6 @@
 mod problems;
 
 fn main() {
-  println!("{}", problems::largest_prime_factor::largest());
+  println!("{}", problems::ten_thousand_first_prime::get());
 }
 

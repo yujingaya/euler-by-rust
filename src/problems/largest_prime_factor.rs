@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 pub fn largest() -> i64 {
   let mut n = 600_851_475_143;
   let mut factors = Vec::new();
