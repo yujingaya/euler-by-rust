@@ -30,19 +30,20 @@ impl Iterator for Prime {
 
 pub fn largest() -> i64 {
   let mut n = 600_851_475_143;
-  let mut p = Prime::new();
+  let p = Prime::new();
   let mut factors = Vec::new();
 
-  while p.get() * p.get() < n {
-    while n % p.get() == 0 {
-      n = n / p.get();
-      factors.push(p.get());
+  for k in p {
+    while n % k == 0 {
+      n = n / k;
+      factors.push(k);
     }
-    p.next();
-  }
-
-  if n != 1 {
-    factors.push(n);
+    if k * k > n {
+      if n != 1 {
+        factors.push(n);
+      }
+      break;
+    }
   }
   
   *factors.iter().max().unwrap()
