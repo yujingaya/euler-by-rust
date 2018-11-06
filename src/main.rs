@@ -1,6 +1,6 @@
 mod problems;
 
 fn main() {
-  println!("{}", problems::even_fibonacci_numbers::even());
+  println!("{}", problems::largest_prime_factor::largest());
 }
 
