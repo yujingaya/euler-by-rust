@@ -1,6 +1,6 @@
 mod problems;
 
 fn main() {
-  println!("{}", problems::ten_thousand_first_prime::get());
+  println!("{}", problems::largest_palindrome_product::largest());
 }
 

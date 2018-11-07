@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 struct Prime {
   cache: Vec<i64>
 }
