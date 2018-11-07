@@ -19,7 +19,9 @@ impl Iterator for Prime {
     let p = self.get();
 
     let next = ((p + 1)..).find(|&n|
-      self.cache.iter().all(|&d| n % d != 0)
+      self.cache.iter()
+        .take_while(|&d| d * d <= n)
+        .all(|&d| n % d != 0)
     ).unwrap();
 
     self.cache.push(next);
@@ -30,6 +32,6 @@ impl Iterator for Prime {
 
 pub fn get() -> i64 {
   let p = Prime::new();
-  
+
   p.skip(10000).next().unwrap()
 }
